@@ -47,3 +47,9 @@ alias ht='history | tail -n 20'
 
 alias v="vim"
 
+if [ ! -f ~/.vimrc ] ; then
+	echo "Creating .vimrc file"
+	echo "syntax on" > ~/.vimrc
+	echo "set ts=4 sw=4 ai" >> ~/.vimrc
+fi
+
