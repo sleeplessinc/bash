@@ -3,7 +3,7 @@
 export HISTSIZE=30000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M-%S "
 
-function go()
+function oldgo()
 {
 	if cd "$1" &> /dev/null ; then
 		pushd . &> /dev/null
@@ -17,6 +17,22 @@ function go()
 			pwd
 		fi
 	fi
+}
+function go()
+{
+    dst="$1"
+    if pushd "$dst" ; then
+        pwd >> ~/.memory
+    else
+        dst=`egrep -i "$dst$" ~/.memory | tail -n 1`
+        if [ "$dst" != "" ] ; then
+            if pushd "$dst" ; then
+                pwd >> ~/.memory
+            fi
+        else
+            echo "Sorry. Can't find \"$1\"."
+        fi
+    fi
 }
 
 export CLICOLOR=1
