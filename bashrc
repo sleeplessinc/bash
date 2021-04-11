@@ -21,12 +21,12 @@ function oldgo()
 function go()
 {
     dst="$1"
-    if pushd "$dst" ; then
+    if pushd "$dst" &>/dev/null ; then
         pwd >> ~/.memory
     else
         dst=`egrep -i "$dst$" ~/.memory | tail -n 1`
         if [ "$dst" != "" ] ; then
-            if pushd "$dst" ; then
+            if pushd "$dst" &>/dev/null ; then
                 pwd >> ~/.memory
             fi
         else
