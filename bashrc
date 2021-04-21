@@ -57,6 +57,7 @@ alias ga='git add'
 alias gb='git branch -v'
 alias gco='git checkout'
 alias gcmp='git commit -m - -a ; git push'
+alias grso='git remote show origin'
 
 alias l='ls -ltrh'
 alias h='history | grep '
