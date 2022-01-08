@@ -21,13 +21,15 @@ function oldgo()
 function go()
 {
     dst="$1"
-    if pushd "$dst" &>/dev/null ; then
-        pwd >> ~/.memory
+    if pushd "$dst" &>/dev/null ; then	# if we cd there  okay ...
+        pwd >> ~/.memory	# then remember new dir
+		pwd					# and show it
     else
-        dst=`egrep -i "$dst$" ~/.memory | tail -n 1`
-        if [ "$dst" != "" ] ; then
-            if pushd "$dst" &>/dev/null ; then
-                pwd >> ~/.memory
+        dst=`egrep -i "$dst$" ~/.memory | tail -n 1`	# look for dir in memory
+        if [ "$dst" != "" ] ; then	# if we find something that matches ...
+            if pushd "$dst" &>/dev/null ; then	# and if we cd there okay ...
+                pwd >> ~/.memory	# then remember dir dir
+				pwd					# and show it
             fi
         else
             echo "Sorry. Can't find \"$1\"."
