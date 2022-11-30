@@ -25,10 +25,6 @@ function go()
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-alias scm='svn commit -m -'
-alias ss='svn status'
-alias sud='svn update'
-
 alias g="git"
 alias gcm='git commit'
 alias "gcm-"='git commit -am -'
@@ -39,7 +35,6 @@ alias gf='git fetch'
 alias gdf='git diff HEAD FETCH_HEAD'
 alias gdfv='git diff HEAD FETCH_HEAD > /tmp/foo.diff ; vim /tmp/foo.diff'
 alias gpll='git pull '
-alias gpsh='git push '
 alias ga='git add'
 alias gb='git branch -v'
 alias gco='git checkout'
@@ -50,10 +45,8 @@ alias l='ls -ltrh'
 alias la='ls -ltrha'
 alias h='history | grep '
 alias ht='history | tail -n 20'
-
-alias v="vim"
-
 alias myip="echo 'local ip: ' `ipconfig getifaddr en0` ; echo 'public ip: ' `dig +short myip.opendns.com @resolver1.opendns.com`"
+alias v="vim"
 
 if [ ! -f ~/.vimrc ] ; then
 	echo "Creating .vimrc file"
