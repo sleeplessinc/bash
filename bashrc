@@ -53,7 +53,6 @@ alias l='ls -ltrh'
 alias la='ls -ltrha'
 alias h='history | grep '
 alias ht='history | tail -n 20'
-alias myip="echo 'local ip: ' `ipconfig getifaddr en0` ; echo 'public ip: ' `dig +short myip.opendns.com @resolver1.opendns.com`"
 alias v="vim"
 
 if [ ! -f ~/.vimrc ] ; then
