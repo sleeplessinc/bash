@@ -3,21 +3,6 @@
 export HISTSIZE=30000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M-%S "
 
-function oldgo()
-{
-	if cd "$1" &> /dev/null ; then
-		pushd . &> /dev/null
-		pwd >> ~/.memory
-	else
-		s=`egrep -i "$1$" ~/.memory | tail -n 1`
-		if [ "$s" == "" ] ; then
-			echo "Sorry. Can't find \"$1\"."
-		else
-			pushd $s &> /dev/null
-			pwd
-		fi
-	fi
-}
 function go()
 {
     dst="$1"
@@ -62,10 +47,13 @@ alias gcmp='git commit -m - -a ; git push'
 alias grso='git remote show origin'
 
 alias l='ls -ltrh'
+alias la='ls -ltrha'
 alias h='history | grep '
 alias ht='history | tail -n 20'
 
 alias v="vim"
+
+alias myip="echo 'local ip: ' `ipconfig getifaddr en0` ; echo 'public ip: ' `dig +short myip.opendns.com @resolver1.opendns.com`"
 
 if [ ! -f ~/.vimrc ] ; then
 	echo "Creating .vimrc file"
