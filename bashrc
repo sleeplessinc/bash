@@ -22,6 +22,14 @@ function go()
     fi
 }
 
+function ips()
+{
+    echo "Local IPs:"
+    for i in `ifconfig | grep "inet " | awk '{ print $2 }'` ; do echo "  " $i ; done
+    echo Public IP:
+    echo "  " `dig +short myip.opendns.com @resolver1.opendns.com`
+}
+
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
