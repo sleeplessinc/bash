@@ -33,6 +33,10 @@ function ips()
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+# alias edit=vim
+
+alias grape=grep
+
 alias g="git"
 alias gcm='git commit'
 alias "gcm-"='git commit -am -'
@@ -49,11 +53,15 @@ alias gco='git checkout'
 alias gcmp='git commit -m - -a ; git push'
 alias grso='git remote show origin'
 
+alias dvs='dv status'
+
 alias l='ls -ltrh'
 alias la='ls -ltrha'
 alias h='history | grep '
 alias ht='history | tail -n 20'
+
 alias v="vim"
+
 
 if [ ! -f ~/.vimrc ] ; then
 	echo "Creating .vimrc file"
