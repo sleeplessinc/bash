@@ -51,7 +51,8 @@ alias ga='git add'
 alias gb='git branch -v'
 alias gco='git checkout'
 alias gcmp='git commit -m - -a ; git push'
-alias grso='git remote show origin'
+#alias grso='git remote show origin'
+alias grso='git remote get-url origin'
 
 alias dvs='dv status'
 
