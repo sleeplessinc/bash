@@ -61,6 +61,10 @@ alias la='ls -ltrha'
 alias h='history | grep '
 alias ht='history | tail -n 20'
 
+alias tmxa="tmux attach -t $1"
+alias tmxn="tmux new -s $1"
+alias tmxl="tmux list-sessions"
+
 alias v="vim"
 
 
